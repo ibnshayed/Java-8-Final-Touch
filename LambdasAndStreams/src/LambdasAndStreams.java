@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
@@ -8,6 +9,7 @@ public class LambdasAndStreams {
             Book -> Java How To Program Early Edition
             Chater -> 17 (Lambdas And Streams )
          */
+        
         //Familiar summation using for loop
         int total = 0;
         for (int i = 1; i <= 10; i++) {
@@ -18,6 +20,7 @@ public class LambdasAndStreams {
         //IntStream.rangeClosed(1,10).sum() -> gives sum of 1+2+3+4+5+6+7+8+9+10 = 55
         int IntStreamRangeCloseSum = IntStream.rangeClosed(1, 10).sum(); // return a integer number
         System.out.println("IntStream.rangeClosed(1,10).sum() : " + IntStreamRangeCloseSum); // output = 55
+
         //IntStream.range(1,10).sum() -> gives sum of 1+2+3+4+5+6+7+8+9 = 45
         int IntStreamRangeSum = IntStream.range(1, 10).sum(); // return a integer number
         //System.out.println("IntStream.rangeClosed(1,10).sum() : "+IntStream.range(1,10).sum()); // output = 45
@@ -30,12 +33,18 @@ public class LambdasAndStreams {
         This is a value-based class; use of identity-sensitive operations (including reference equality (==), identity hash code, or synchronization) on instances of OptionalDouble may have unpredictable results and should be avoided.
         See more on https://docs.oracle.com/javase/8/docs/api/java/util/OptionalDouble.html
          */
-       // OptionalDouble optionalDouble = IntStream.rangeClosed(1, 10).average();
+
+        //OptionalDouble optionalDouble = IntStream.rangeClosed(1, 10).average();
         //double average = optionalDouble.getAsDouble();
         double average = IntStream.rangeClosed(1, 10).average().getAsDouble();
         System.out.println("IntStream.rangeClosed(1,10).average().getAsDouble(): " + average); // 55 / 10 = 5.5
 
-        
+        //using array
+        int[] array = {1,2,3,4,5,6,7,8,9,10};
+        System.out.println("IntStream.rangeClosed(array[0],array[9]).sum() : " +IntStream.rangeClosed(array[0],array[9]).sum()); //output -> 55
+        System.out.println("IntStream.rangeClosed(array[0],array[9]).average() : " +IntStream.rangeClosed(array[0],array[9]).average().getAsDouble()); //output -> 55 / 10 = 5.5
+
+
 
     }
 
