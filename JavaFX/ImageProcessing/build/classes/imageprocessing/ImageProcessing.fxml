@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #009999;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imageprocessing.ImageProcessingController">
+   <children>
+      <GridPane layoutX="144.0" layoutY="82.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="418.0" minWidth="10.0" prefWidth="399.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="413.0" minWidth="10.0" prefWidth="401.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="23.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="548.0" minHeight="10.0" prefHeight="525.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <MenuBar style="-fx-background-color: #99d6ff;" GridPane.columnSpan="2">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menu_inport_image" mnemonicParsing="false" onAction="#actionImportImageFromComputer" text="Import Image" />
+                        <MenuItem fx:id="saveImage" mnemonicParsing="false" onAction="#actionSaveImageFromComputer" text="Save" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Color Model Conversion">
+                  <items>
+                    <MenuItem fx:id="convertion_rgb_to_cmy" mnemonicParsing="false" onAction="#actionConvertRGBToCMY" text="RGB To CMY" />
+                        <MenuItem fx:id="conversion_rgb_to_hsi" mnemonicParsing="false" onAction="#actionConversionRGBToHSI" text="RGB To HSI" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text=" GrayScale">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#actionConversionRGBToGrayScaleByAverageAlgorithm" text="1.Average" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionConversionRGBToGrayScaleByLumaAlgorithm" text="2.Luma" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionConversionRGBToGrayScaleByDesaturationAlgorithm" text="3.Desaturation" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionConversionRGBToGrayScaleByDecompositionAlgorithm" text="4.Decomposition" />
+                        <Menu mnemonicParsing="false" text="5.Single Color Channel">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#actionConversionToRed" text="Red" />
+                              <MenuItem mnemonicParsing="false" onAction="#actionConversionToGreen" text="Green" />
+                              <MenuItem mnemonicParsing="false" onAction="#actionConversionToBlue" text="Blue" />
+                          </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Original Imgae" textAlignment="CENTER" textOrigin="TOP" wrappingWidth="392.6708984375" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Converted Image" textAlignment="CENTER" textOrigin="TOP" wrappingWidth="399.6708984375" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="originalImageView" fitHeight="530.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fx:id="outputImageView" fitHeight="530.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

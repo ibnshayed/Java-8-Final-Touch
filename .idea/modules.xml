@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ArrayInJava8/ArrayInJava8.iml" filepath="$PROJECT_DIR$/ArrayInJava8/ArrayInJava8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-8-Final-Touch.iml" filepath="$PROJECT_DIR$/.idea/Java-8-Final-Touch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaCollectionFramework/JavaCollectionFramework.iml" filepath="$PROJECT_DIR$/JavaCollectionFramework/JavaCollectionFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LambdasAndStreams/LambdasAndStreams.iml" filepath="$PROJECT_DIR$/LambdasAndStreams/LambdasAndStreams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StringAPI/StringAPI.iml" filepath="$PROJECT_DIR$/StringAPI/StringAPI.iml" />
+    </modules>
+  </component>
+</project>
